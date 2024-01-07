@@ -1,0 +1,34 @@
+.form1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.form-control{
+    width: 100%;
+    padding-top: 2px ;
+}
+
+.modalRecipesContainer{
+    max-height: 90vh;
+    width: 50vw;
+    overflow-y: scroll;
+}
+
+.FormIngredientes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.form-counter{
+    align-self: flex-end;
+    width: 40%;
+}
+
+.form-control-2{
+    width: 48%;
+    margin-right: 2%;
+}

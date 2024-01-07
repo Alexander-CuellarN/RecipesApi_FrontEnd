@@ -1,0 +1,41 @@
+<form [formGroup]="myform" (submit)="handlerSingIn(myform)">
+    <h1>Crear Usuario</h1>
+    <div>
+        <div class="gridContainerSingin">
+            <div>
+                <mat-form-field class="">
+                    <mat-label>Nombre y apellido</mat-label>
+                    <input matInput formControlName="NombreUsuario">
+                    <mat-error
+                        *ngIf="myform.get('NombreUsuario')?.invalid && (myform.get('NombreUsuario')?.dirty || myform.get('NombreUsuario')?.touched)">
+                        el campo Nombre y apellido es requerido.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="">
+                    <mat-label>Correo Electronico</mat-label>
+                    <input matInput type="email" formControlName="CorreoElectronico">
+                    <mat-error
+                        *ngIf="myform.get('CorreoElectronico')?.invalid && (myform.get('CorreoElectronico')?.dirty || myform.get('CorreoElectronico')?.touched)">
+                        el campo Correo Electronico es requerido.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" formControlName="Contraseña">
+                    <mat-error
+                        *ngIf="myform.get('Contraseña')?.invalid && (myform.get('Contraseña')?.dirty || myform.get('Contraseña')?.touched)">
+                        el campo Contraseña es requerido.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button mat-stroked-button color="primary" type="submit"> Registrarse</button>
+        <a mat-stroked-button color="warn" type="button" (click)="SingIn()">Volver</a>
+    </div>
+</form>

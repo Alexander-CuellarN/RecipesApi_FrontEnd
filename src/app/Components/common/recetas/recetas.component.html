@@ -1,0 +1,22 @@
+<mat-card class="recetaCard">
+  <mat-card-header>
+
+    <div mat-card-avatar class="iconDetails">
+      <mat-icon matTooltip="Mas información" (click)="openDialog()">info</mat-icon>
+    </div>
+
+    <mat-card-title-group>
+      <mat-card-title class="titleRecipeHeader">
+        <h3>{{content.nombre}}</h3>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p>Tiempo: {{content.tiempoPreparacion}}min</p>
+        <p>Creada por: {{content.nombreUsuario}}</p>
+      </mat-card-subtitle>
+
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{content.descripcion}}</p>
+  </mat-card-content>
+</mat-card>

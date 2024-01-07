@@ -1,0 +1,14 @@
+<section [ngClass]="'Bg-Container'">
+    <div *ngIf="status === 'login'; then logIn else SigninDiv"></div>
+    <ng-template #logIn>
+        <div>
+            <app-login (emisor)="SignIn($event)"></app-login>
+        </div>
+    </ng-template>
+    <ng-template #SigninDiv>
+        <div>
+            <app-signin (emisor)="SignIn($event)"></app-signin>
+        </div>
+    </ng-template>
+
+</section>

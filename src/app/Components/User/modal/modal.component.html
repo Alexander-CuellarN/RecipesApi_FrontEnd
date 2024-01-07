@@ -1,0 +1,76 @@
+<form (submit)="CrearReceta()">
+    <mat-stepper orientation="vertical" #stepper class="modalRecipesContainer">
+        <mat-step [stepControl]="firstFormGroup">
+            <div [formGroup]="firstFormGroup" class="form1">
+                <ng-template matStepLabel>Rectas</ng-template>
+                <mat-form-field class="form-control">
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="nombre" required>
+                </mat-form-field>
+
+                <mat-form-field class="form-control">
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput formControlName="descripcion"></textarea>
+                </mat-form-field>
+                <mat-form-field class="form-control">
+                    <mat-label>Tiempo de preparacion</mat-label>
+                    <input matInput formControlName="tiempoPreparacion" type="number" required>
+                </mat-form-field>
+                <button mat-button matStepperNext type="button">Siguiente</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" class="">
+            <div class="FormIngredientes">
+                <ng-template matStepLabel>Ingredientes </ng-template>
+                <div [formGroup]="secondFormGroup">
+                    <div>
+                        <div *ngFor="let _ of repeatElements; let i = index">
+                            <fieldset>
+                                <legend>{{i + 1}}° Ingrediente:</legend>
+                                <mat-form-field class="form-control-2">
+                                    <mat-label>Nombre del Ingrediente</mat-label>
+                                    <input matInput formControlName="nombre{{i}}">
+                                </mat-form-field>
+                                <mat-form-field class="form-control-2">
+                                    <mat-label>cantidad</mat-label>
+                                    <input matInput formControlName="cantidad{{i}}" type="number">
+                                </mat-form-field>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious type="button">Regresar</button>
+                    <button mat-button matStepperNext type="button">Siguiente</button>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" class="">
+            <div class="FormIngredientes">
+                <ng-template matStepLabel>Pasos</ng-template>
+                <div [formGroup]="thirthFormGroup">
+                    <div>
+                        <div *ngFor="let _ of repeatpasos; let i = index">
+                            <fieldset>
+                                <legend>{{i + 1}}° Paso:</legend>
+                                <mat-form-field class="form-control">
+                                    <mat-label>orden</mat-label>
+                                    <input matInput formControlName="descripcion{{i}}" type="number">
+                                </mat-form-field>
+
+                                <mat-form-field class="form-control">
+                                    <mat-label>Descripción</mat-label>
+                                    <textarea matInput formControlName="orden{{i}}"></textarea>
+                                </mat-form-field>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperPrevious type="button">Regresar</button>
+                    <button mat-button matStepperNext type="submit">Crear</button>
+                </div>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</form>

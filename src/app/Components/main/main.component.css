@@ -1,0 +1,19 @@
+.Bg-Container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #234e86;
+    background-image: linear-gradient(166deg, #234e86 0%, #d09c97 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+.Bg-Container > div:nth-child(1) {
+    width: 60%;
+    height: 70%;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    border-radius: 2vw;
+    box-shadow: 3vw 3vw 10vw var(--main-color);
+}

@@ -1,0 +1,25 @@
+<form [formGroup]="newform" (submit)="Login(newform)">
+    <h1>Inicio de sesión</h1>
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error
+                *ngIf="newform.get('email')?.invalid && (newform.get('email')?.dirty || newform.get('email')?.touched)">
+                el campo Usuario es requerido.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="password" type="password">
+            <mat-error *ngIf="newform.get('password')?.invalid">
+                el campo Contraseña es requerido.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-stroked-button color="primary" type="submit"> LogIn</button>
+        <a mat-stroked-button color="warn" type="button" (click)="SignIn()">SingIn</a>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+.moreInterest{
+    margin-top: 10px;
+    color: var(--second-color);
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.recetaCard {
+    overflow-y: scroll;
+    height: 90vh;
+    width: 50vw;
+    padding: 2vh 1vw;
+  }
+
+
+  .titleRecipeHeader h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--second-color);
+    margin:  0;
+    height: 100%;
+  }
+
+  .iconDetails{
+    color: var(--second-color); 
+  }
+
+  .isFavorite{
+    color: var(--thirth-color);
+  }
+
+  .isNotFavorite{
+    color: var(--second-color);
+    opacity: 0.2;
+  }
+
+
+  .recetaCard ul li{
+    margin-bottom: 10px;
+    list-style: none;
+  }
+
+  .recetaCard ul{
+    padding: 0;
+  }

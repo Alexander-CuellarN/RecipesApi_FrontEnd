@@ -1,0 +1,44 @@
+<main>
+    <section class="lateralMenu">
+        <nav>
+            <ul>
+                <div>
+                    <li [class]="(optionMenu === 'home')?'isActived':''" [routerLink]="['/Home']">
+                        <span>
+                            <mat-icon>home</mat-icon>
+                        </span>
+                        <p>Home</p>
+                    </li>
+                    <li [class]="(optionMenu === 'Creados')?'isActived':''" [routerLink]="['/Home/Creados']">
+                        <span>
+                            <mat-icon>manage_search</mat-icon>
+                        </span>
+                        <p> Mis Recetas </p>
+                    </li>
+                    <li [class]="(optionMenu === 'Favoritos')?'isActived':''" [routerLink]="['/Home/Favoritos']">
+                        <span>
+                            <mat-icon>star</mat-icon>
+                        </span>
+                        <p>Mis favoritas </p>
+                    </li>
+                </div>
+                <li (click)="Login()">
+                    <span>
+                        <mat-icon>logout</mat-icon>
+                    </span>
+                    <p>Cerrar sesión </p>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <div class="MainContainer">
+            <button mat-mini-fab color="primary" matTooltip="Agregar Nueva receta" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <div *ngFor="let receta of recetaList" class="recipesContainer">
+                <app-recetas [content]="receta"></app-recetas>
+            </div>
+        </div>
+    </section>
+</main>

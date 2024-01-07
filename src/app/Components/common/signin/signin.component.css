@@ -1,0 +1,25 @@
+form>div:nth-child(2) {
+    width: 100%;
+    height: auto;
+}
+
+.gridContainerSingin{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:  1fr 1fr;
+    height: 100%;
+    width: 100%;
+    padding: 0 1vw;
+    justify-content: center;
+}
+
+.mat-mdc-form-field {
+    padding: 0 1vw;
+}
+
+.gridContainerSingin div:nth-child(1){
+    grid-column: 1/-1;
+}
+.gridContainerSingin div:nth-child(odd){
+    align-self: flex-end;
+}

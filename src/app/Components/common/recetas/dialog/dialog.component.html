@@ -1,0 +1,43 @@
+<mat-card class="recetaCard">
+  <mat-card-header>
+
+    <div mat-card-avatar class="iconDetails">
+      <mat-icon [matTooltip]="(isFavorite) ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+        [ngClass]="(isFavorite) ? 'isFavorite' : 'isNotFavorite'"
+        (click)="(isFavorite) ?  removefavorites(data.idreceta) : addFavorite(data.idreceta)">
+        star
+      </mat-icon>
+    </div>
+
+    <mat-card-title-group>
+      <mat-card-title class="titleRecipeHeader">
+        <h3>{{data.nombre}}</h3>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <p>Tiempo: {{data.tiempoPreparacion}}min</p>
+        <p>Creada por: {{data.nombreUsuario}}</p>
+      </mat-card-subtitle>
+
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <div>{{data.descripcion}}</div>
+    <div>
+      <h4 class="moreInterest">Ingredientes</h4>
+      <ul>
+        <li *ngFor="let ingredient of data.ingrediente"> 
+          {{ingredient.nombre}}: {{ingredient.cantidad}}
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="moreInterest">Pasos para la preparación: </h4>
+      <ul>
+        <li *ngFor="let paso of data.pasos let i= index"> 
+          {{i + 1}}° paso: {{paso.descripcion}}
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

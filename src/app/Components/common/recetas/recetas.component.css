@@ -1,0 +1,19 @@
+.recetaCard {
+    max-width: 380px;
+    margin-bottom: 8px;
+    max-height: 300px;
+    overflow-y: scroll;
+    height: 300px;
+  }
+
+  .titleRecipeHeader h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--second-color);
+    margin:  0;
+    height: 100%;
+  }
+
+  .iconDetails{
+    color: var(--second-color); 
+  }
